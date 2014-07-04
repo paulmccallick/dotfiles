@@ -17,8 +17,17 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'textobj-rubyblock'
 Bundle 'skalnik/vim-vroom'
 Bundle 'benmills/vimux'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
 
+"check out the status line on that guy!
+let g:bufferline_echo = 0
+set laststatus=2
+set noshowmode
 
+"lets do some masochistic ruby checking"
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -29,6 +38,7 @@ set number
 "do what it takes to select ruby blocks
 runtime macros/matchit.vim
 filetype indent plugin on
+
 
 " Needed for Syntax Highlighting and stuff
 filetype on
