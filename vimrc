@@ -23,6 +23,7 @@ Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdtree'
+Bundle 'dougireton/vim-chef'
 
 "the backslash key is WAY too far away
 let mapleader=","
@@ -55,7 +56,7 @@ filetype plugin on    " Enable filetype-specific plugins
 autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
 set number
 syntax on
-
+runtime macros/matchit.vim
 " Needed for Syntax Highlighting and stuff
 set grepprg=grep\ -nH\ $*
 
@@ -90,4 +91,5 @@ set hlsearch
 set background=dark
 colorscheme dark-ruby
 
-
+"ctrlp needs some hints
+set wildignore+=*/bin/**
