@@ -24,7 +24,10 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdtree'
 Bundle 'dougireton/vim-chef'
-
+Bundle 'ck3g/vim-change-hash-syntax'
+Bundle 'suan/vim-instant-markdown'
+Bundle 'jtratner/vim-flavored-markdown'
+Bundle 'itchyny/landscape.vim'
 "the backslash key is WAY too far away
 let mapleader=","
 
@@ -33,6 +36,7 @@ map <Leader>n :NERDTreeToggle<CR>
 
 "I hate the control key but i love multiple windows
 nnoremap <silent> <LEADER>w :wincmd w<CR>
+
 
 "check out the status line on that guy!
 let g:bufferline_echo = 0
@@ -89,7 +93,8 @@ set hlsearch
 
 "pretty colors
 set background=dark
-colorscheme dark-ruby
+colorscheme   landscape
+highlight Cursor guibg=Red
 
 "ctrlp needs some hints
 set wildignore+=*/bin/**
