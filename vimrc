@@ -8,7 +8,6 @@ Bundle 'gmarik/vundle'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'mileszs/ack.vim'
-Bundle 'flazz/vim-colorschemes'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-endwise'
@@ -16,7 +15,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kana/vim-textobj-user'
 Bundle 'textobj-rubyblock'
 Bundle 'skalnik/vim-vroom'
-Bundle 'duskhacker/sweet-rspec-vim'
+Bundle 'paulmccallick/sweet-rspec-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
@@ -28,15 +27,16 @@ Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'jtratner/vim-flavored-markdown'
 Bundle 'itchyny/landscape.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'PProvost/vim-ps1'
 "the backslash key is WAY too far away
 let mapleader=","
 
 "NERDS!! NERDS!! NERDS!!!
 map <Leader>n :NERDTreeToggle<CR>
 
-"I hate the control key but i love multiple windows
-nnoremap <silent> <LEADER>w :wincmd w<CR>
-
+map Y y$
 
 "check out the status line on that guy!
 let g:bufferline_echo = 0
@@ -98,3 +98,21 @@ highlight Cursor guibg=Red
 
 "ctrlp needs some hints
 set wildignore+=*/bin/**
+
+"===============YouCompleteMe=================
+"gather hints from strings
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+"==============Mack===========================
+"
+function! Mack(cmd, args)
+  mark Q
+  Ack
+  call ack#Ack(a:cmd, a:args)
+endfunction
+command! -nargs=* Mack           :call Mack('grep<bang>', <q-args>)
+
+"
+"==============Ack======================
+let g:ackhighlight = 1
