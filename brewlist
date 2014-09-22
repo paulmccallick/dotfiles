@@ -23,7 +23,6 @@ pkg-config
 ppl011
 readline
 redis
-rsense
 sqlite
 tmux
 vim
