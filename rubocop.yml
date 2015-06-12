@@ -1,2 +1,8 @@
 LineLength:
   Max: 100
+
+Style/Encoding:
+  EnforcedStyle: never
+  SupportedStyles:
+    - when_needed
+    - always

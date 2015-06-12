@@ -17,8 +17,10 @@ export DOMAIN=localhost
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 export EDITOR=vim
-alias k='/usr/bin/knife'
+alias k='knife'
+#alias vagrant='chef exec vagrant'
 alias be='bundle exec'
 set -o vi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# PATH=/opt/chefdk/bin:$PATH
