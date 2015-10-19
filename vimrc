@@ -24,7 +24,6 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdtree'
 Bundle 'dougireton/vim-chef'
 Bundle 'ck3g/vim-change-hash-syntax'
-Bundle 'suan/vim-instant-markdown'
 Bundle 'jtratner/vim-flavored-markdown'
 Bundle 'itchyny/landscape.vim'
 Bundle 'majutsushi/tagbar'
@@ -42,6 +41,7 @@ Bundle 'guns/vim-clojure-highlight'
 Bundle 'luochen1990/rainbow'
 Bundle 'OmniSharp/omnisharp-vim'
 Bundle 'othree/xml.vim'
+Bundle 'suan/vim-instant-markdown'
 
 "the backslash key is WAY too far away
 let mapleader=","
@@ -127,6 +127,7 @@ set wildignore+=*/bin/**
 "gather hints from strings
 let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:EclimCompletionMethod = 'omnifunc'
 
 "==============Mack===========================
 "

@@ -17,10 +17,12 @@ export DOMAIN=localhost
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 export EDITOR=vim
-alias k='knife'
+alias vim='rvm default do /usr/local/bin/vim $@'
 #alias vagrant='chef exec vagrant'
 alias be='bundle exec'
 set -o vi
 
+$(boot2docker shellinit 2>/dev/null)
+eval "$(direnv hook bash)"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # PATH=/opt/chefdk/bin:$PATH
