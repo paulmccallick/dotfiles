@@ -1,8 +1,10 @@
 set nocompatible      " We're running Vim, not Vi!
 " Required Vundle setup
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+ 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 Bundle 'xolox/vim-misc'
@@ -25,7 +27,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'dougireton/vim-chef'
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'jtratner/vim-flavored-markdown'
-Bundle 'itchyny/landscape.vim'
+Plugin 'itchyny/landscape.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'PProvost/vim-ps1'
@@ -42,6 +44,8 @@ Bundle 'luochen1990/rainbow'
 Bundle 'OmniSharp/omnisharp-vim'
 Bundle 'othree/xml.vim'
 Bundle 'suan/vim-instant-markdown'
+call vundle#end()            " required
+filetype plugin indent on
 
 "the backslash key is WAY too far away
 let mapleader=","
@@ -128,7 +132,11 @@ set wildignore+=*/bin/**
 let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:EclimCompletionMethod = 'omnifunc'
-
+let g:ycm_auto_start_csharp_server = 0
+let g:ycm_auto_stop_csharp_server = 0
+let g:ycm_csharp_server_port = 2000 
+let g:OmniSharp_server_type = 'v1'
+let g:OmniSharp_server_type = 'roslyn'
 "==============Mack===========================
 "
 function! Mack(cmd, args)

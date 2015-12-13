@@ -4,9 +4,9 @@
 if [ -f ~/.bashrc ]; then
      source ~/.bashrc
 fi
-
-source ~/.git-completion.sh
-PS1="$PS1\$($( cat /Users/paulm/git-ps1.sh ))"
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
 
 export JAVA_HOME=`/usr/libexec/java_home`
 export PATH=$PATH:/usr/local/mysql/bin
@@ -16,13 +16,14 @@ export PORT=8080
 export DOMAIN=localhost
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
+alias vim='mvim -v'
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
 export EDITOR=vim
-alias vim='rvm default do /usr/local/bin/vim $@'
-#alias vagrant='chef exec vagrant'
-alias be='bundle exec'
+export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 set -o vi
-
+source dnvm.sh
 $(boot2docker shellinit 2>/dev/null)
-eval "$(direnv hook bash)"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# PATH=/opt/chefdk/bin:$PATH
+eval "$(rbenv init -)"
+
+[ -s "/Users/paul/.dnx/dnvm/dnvm.sh" ] && . "/Users/paul/.dnx/dnvm/dnvm.sh" # Load dnvm
