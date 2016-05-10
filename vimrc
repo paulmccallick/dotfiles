@@ -24,7 +24,6 @@ Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdtree'
-Bundle 'dougireton/vim-chef'
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'jtratner/vim-flavored-markdown'
 Plugin 'itchyny/landscape.vim'
@@ -32,18 +31,13 @@ Bundle 'majutsushi/tagbar'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'PProvost/vim-ps1'
 Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-leiningen'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-sexp-mappings-for-regular-people'
-Bundle 'guns/vim-sexp'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'guns/vim-clojure-static'
-Bundle 'guns/vim-clojure-highlight'
 Bundle 'luochen1990/rainbow'
-Bundle 'OmniSharp/omnisharp-vim'
 Bundle 'othree/xml.vim'
 Bundle 'suan/vim-instant-markdown'
+Bundle 'pangloss/vim-javascript'
+Bundle 'ternjs/tern_for_vim'
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -64,10 +58,12 @@ set laststatus=2
 set noshowmode
 
 "lets get serious abou ruby
+let g:syntastic_ruby_rubocop_exec = '$HOME/bin/rubovim.sh'
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 set makeprg=NO_COLOR=true\ rake
+"let g:syntastic_ruby_rubocop_exec      = '/usr/local/bin/rubocop'
 
 "unit testing in quickfix works
 map <Leader>T :SweetVimRspecRunFile<CR>
