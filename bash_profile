@@ -18,6 +18,7 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
+export JAVA_HOME=`/usr/libexec/java_home`
 # use fancy colors when ls'ign
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
@@ -25,7 +26,7 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 # set vim as my default editor
 export EDITOR=vim
 set -o vi
-
+alias vim='mvim -v'
 #Proxy settings
 export http_proxy=http://webproxysea.nordstrom.net:8181
 export https_proxy=$http_proxy
