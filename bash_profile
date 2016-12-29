@@ -4,28 +4,37 @@
 if [ -f ~/.bashrc ]; then
      source ~/.bashrc
 fi
-if [ -f ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
+
+# enable brew completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# give me a git like prompt when in git repos
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  GIT_PROMPT_THEME=Solarized
+  GIT_PROMPT_START="(\u@\w"
+  GIT_PROMPT_END=")> "
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 export JAVA_HOME=`/usr/libexec/java_home`
-export PATH=$PATH:~/activator-dist-1.3.10/bin
-export PATH=$PATH:~/gradle-2.12/bin
-export PATH=$PATH:/usr/local/mysql/bin
-export IP=127.0.0.1
-export REDISTOGO_URL=redis://localhost:16379
-export PORT=8080
-export DOMAIN=localhost
+# use fancy colors when ls'ign
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
-alias vim='mvim -v'
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
-export EDITOR=vim
-export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
-set -o vi
-source dnvm.sh
-$(boot2docker shellinit 2>/dev/null)
-eval "$(rbenv init -)"
 
-[ -s "/Users/paul/.dnx/dnvm/dnvm.sh" ] && . "/Users/paul/.dnx/dnvm/dnvm.sh" # Load dnvm
+# set vim as my default editor
+export EDITOR=vim
+set -o vi
+alias vim='mvim -v'
+#Proxy settings
+export http_proxy=http://webproxysea.nordstrom.net:8181
+export https_proxy=$http_proxy
+# export no_proxy=localhost,*.local,127.0.0.1/8,.nordstrom.net,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+export no_proxy=127.0.0.1,localhost,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,nordstrom.net,dev.nordstrom.com,wsperf.nordstrom.com,website.nordstrom.com,.local
+export NO_PROXY=127.0.0.1,localhost,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,nordstrom.net,dev.nordstrom.com,wsperf.nordstrom.com,website.nordstrom.com,.local
+
+echo "========Nordstrom Proxy set=========="
+echo Proxy:  $http_proxy
+echo Bypass: $no_proxy
+echo "====================================="
