@@ -36,8 +36,17 @@ Bundle 'tpope/vim-surround'
 Bundle 'luochen1990/rainbow'
 Bundle 'othree/xml.vim'
 Bundle 'suan/vim-instant-markdown'
-Bundle 'pangloss/vim-javascript'
+" javascript
 Bundle 'ternjs/tern_for_vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'moll/vim-node'
+Bundle 'othree/javascript-libraries-syntax.vim'
+" Java and friends
+Bundle 'vim-scripts/groovy.vim'
+Bundle 'tfnico/vim-gradle'
+
+
+
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -77,6 +86,9 @@ autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
 set number
 syntax on
 runtime macros/matchit.vim
+
+" eclim
+nnoremap <silent> <leader>m :JavaSearch -x declarations -s project<CR>"
 
 " Searching and replace for the thing under the cursor
 :vnoremap <Leader>s "hy:%s/<C-r>h//gc<left><left><left> 

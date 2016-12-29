@@ -2,7 +2,7 @@ LineLength:
   Max: 100
 
 Style/Encoding:
-  EnforcedStyle: never
+  EnforcedStyle: when_needed
   SupportedStyles:
     - when_needed
     - always
