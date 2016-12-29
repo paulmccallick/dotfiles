@@ -2,7 +2,7 @@
 	name = Paul McCallick
 	email = paul@mccallick.com
 [core]
-	excludesfile = /Users/paulm/.gitignore_global
+	excludesfile = /Users/paul/.gitignore
 
 [difftool "sourcetree"]
 	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"

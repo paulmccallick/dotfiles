@@ -9,6 +9,8 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 export JAVA_HOME=`/usr/libexec/java_home`
+export PATH=$PATH:~/activator-dist-1.3.10/bin
+export PATH=$PATH:~/gradle-2.12/bin
 export PATH=$PATH:/usr/local/mysql/bin
 export IP=127.0.0.1
 export REDISTOGO_URL=redis://localhost:16379

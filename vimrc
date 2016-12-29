@@ -24,7 +24,6 @@ Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdtree'
-Bundle 'dougireton/vim-chef'
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'jtratner/vim-flavored-markdown'
 Plugin 'itchyny/landscape.vim'
@@ -32,18 +31,23 @@ Bundle 'majutsushi/tagbar'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'PProvost/vim-ps1'
 Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-leiningen'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-sexp-mappings-for-regular-people'
-Bundle 'guns/vim-sexp'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'guns/vim-clojure-static'
-Bundle 'guns/vim-clojure-highlight'
 Bundle 'luochen1990/rainbow'
 Bundle 'OmniSharp/omnisharp-vim'
 Bundle 'othree/xml.vim'
 Bundle 'suan/vim-instant-markdown'
+" javascript
+Bundle 'ternjs/tern_for_vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'moll/vim-node'
+Bundle 'othree/javascript-libraries-syntax.vim'
+" Java and friends
+Bundle 'vim-scripts/groovy.vim'
+Bundle 'tfnico/vim-gradle'
+
+
+
 call vundle#end()            " required
 filetype plugin indent on
 
@@ -81,6 +85,9 @@ autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
 set number
 syntax on
 runtime macros/matchit.vim
+
+" eclim
+nnoremap <silent> <leader>m :JavaSearch -x declarations -s project<CR>"
 
 " Searching and replace for the thing under the cursor
 :vnoremap <Leader>s "hy:%s/<C-r>h//gc<left><left><left> 
