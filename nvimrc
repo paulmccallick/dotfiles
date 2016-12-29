@@ -9,7 +9,8 @@ Plug 'textobj-rubyblock'
 Plug 'tpope/vim-fugitive'
 Plug 'neomake/neomake'
 Plug 'bling/vim-airline'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 Plug 'ck3g/vim-change-hash-syntax'
@@ -53,6 +54,11 @@ let g:neomake_informational_sign = {
       \ }
 
 autocmd BufWritePost,BufEnter * Neomake
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 50
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "the backslash key is WAY too far away
 let mapleader=","
