@@ -27,6 +27,9 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 export EDITOR=vim
 set -o vi
 alias vim='mvim -v'
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
 #Proxy settings
 export http_proxy=http://webproxysea.nordstrom.net:8181
 export https_proxy=$http_proxy
@@ -38,3 +41,4 @@ echo "========Nordstrom Proxy set=========="
 echo Proxy:  $http_proxy
 echo Bypass: $no_proxy
 echo "====================================="
+
